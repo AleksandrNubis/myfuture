@@ -10,8 +10,8 @@ import (
 
 func main() {
 	r := mux.NewRouter()
-	handlers.Books = append(handlers.Books, models.Book{ID: "1", Title: "Война и Мир", Author: &models.Author{Firstname: "Лев", Lastname: "Толстой"}})
-	handlers.Books = append(handlers.Books, models.Book{ID: "2", Title: "Преступление и наказание", Author: &models.Author{Firstname: "Фёдор", Lastname: "Достоевский"}})
+	handlers.Books = append(handlers.Books, models.Book{ID: "1", Title: "Властелин Колец", Author: &models.Author{Firstname: "Джон", Lastname: "Толкиен"}})
+	handlers.Books = append(handlers.Books, models.Book{ID: "2", Title: "Шерлок Холмс", Author: &models.Author{Firstname: "Артур", Lastname: "Дойл"}})
 	r.HandleFunc("/books", handlers.GetBooks).Methods("GET")
 	r.HandleFunc("/books/{id}", handlers.GetBook).Methods("GET")
 	r.HandleFunc("/books", handlers.CreateBook).Methods("POST")
